@@ -45,6 +45,7 @@ struct ContentView: View {
                 }
             }
         }
+        
         .onAppear(perform: { //Performs before view opens
             self.networkManager.fetchData(category: "")
         })
