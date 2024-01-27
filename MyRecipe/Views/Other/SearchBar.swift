@@ -16,6 +16,11 @@ struct SearchBar: View {
         HStack {
             TextField("Search Recipe", text: $text, onCommit: onSearch)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocorrectionDisabled()
+                .keyboardType(.asciiCapable)
+                .onSubmit {
+                    onSearch()
+                }
             Button(action: {
                 onSearch()
             }) {
